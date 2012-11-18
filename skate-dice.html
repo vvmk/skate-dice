@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Skate Dice</title>
+	<script type="text/javascript" src="skate-dice.js"></script>
+	<link type="text/css" rel="stylesheet" href="skate-dice.css" />
+</head>
+<body>
+	<div id="container">
+		<input type="radio" name="dif" id="radio_normal" CHECKED value="5" onclick="changeDifficulty(6);" />&nbsp;normal (no handicap)<br />
+		<input type="radio" name="dif" id="radio_easy" value="11" onclick="changeDifficulty(12);" />&nbsp;easy (chance for hard tricks lowered)<br />
+		<br />
+		<input type="checkbox" id="skate_toggle" onclick="toggleSkate();" />&nbsp;Show 'Skate Dice' and 'X' rolls for playing skate<br />
+		<br />
+		<input type="button" name="roll" value="roll" onclick="roll();" />
+		<div id="dice_container" class="output"></div>
+		<div id="extra_container" class="output"></div>
+	</div>
+</body>
+</html>
