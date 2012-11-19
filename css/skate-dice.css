@@ -2,6 +2,8 @@ body {
 	margin: 0px;
 	padding: 0px;
 	font-family: helvetica;
+	background-color: rgb(53, 53, 53);
+	color: gray;
 }
 
 #container {
@@ -9,8 +11,6 @@ body {
 }
 
 #settings {
-	//padding: 5px;
-	//border: 1px solid gray;
 	width: 200px;
 	height: 20px;
 }
@@ -33,6 +33,7 @@ body {
 	border: 1px solid gray;
 	width: 100%;
 	padding: 5px;
+	font-size: 14px;
 }
 
 #roll_button {
