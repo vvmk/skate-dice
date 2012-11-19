@@ -31,23 +31,23 @@ var d4 = ["kickflip", "heelflip", "shuvit", "x", "x", "skate\ndice", "shuvit", "
 var d3 = ["180", "180", "360", "bigspin", "x", "skate\ndice", "180", "bigspin", "x", "skate\ndice", "x", "skate\ndice"];
 var d2 = ["frontside", "backside", "frontside", "backside", "x", "skate\ndice", "x", "skate\ndice", "x", "skate\ndice", "x", "skate\ndice"];
 
-var die = [d1, d2, d3, d4];
+var dice = [d1, d2, d3, d4];
 
 function roll() {
 	console
 	var output = '';
 	var extra = [0, 0]; //[0] = 'x', [1] = 'skate\ndice'
-	for (var x=0; x<die.length;x++) {
+	for (var x=0; x<dice.length;x++) {
 		var o;
 		var rand = Math.floor(Math.random()*difficulty);
-		o = die[x][rand];
+		o = dice[x][rand];
 		
 		//console.log(o);
 		if (o === 'x' || o === 'skate\ndice') {
 			var i = (o === 'x') ? 0 : 1;
 			extra[i]++;
 		} else {
-			output += (' '+o);
+			output += ('<div class="die"><br /><br /><span>'+o+'</span></div>');
 		}
 	}
 	if (output==='')

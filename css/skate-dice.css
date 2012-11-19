@@ -35,7 +35,8 @@
 }
 
 #dice_container {
-	
+	height: 180px;
+	width: 180px;
 }
 
 #prefs_top {
@@ -48,4 +49,17 @@
 
 #prefs_top:hover {
 	cursor: pointer;
+}
+
+.die {
+	text-align: center;
+	//padding-top: 10px;
+	float: left;
+	margin: 1px 2px 2px 0px;
+	font: 15px helvetica, sans-serif;
+	height: 80px !important;
+	width: 80px;
+	border: 1px solid gray;
+	border-radius: 15px;
+	-moz-border-radius: 7px;
 }
