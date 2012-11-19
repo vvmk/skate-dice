@@ -1,6 +1,6 @@
 //Skate Dice for web 
 //
-//version 0.1
+//version 0.2
 //
 //written by Vincent Masiello in about an hour on 11/18/2012 when he should have been working on an important deadline.
 //contact me: vincentmasiello@gmail.com
@@ -19,25 +19,26 @@
 	//make trick output smarter
 		//only fakie, switch, regular -> add 'ollie'
 		//only  frontside/backside -> add '180' or 'ollie'
-	//move down settings into sexy 'prefs' pane; show/hide
 	//make everything prettier (dice graphics and such)
 
 //settings
 var difficulty = 6; //if easy, dilute dice with easier tricks
 var play_skate = false; //if false, 'x' and 'skate dice' will not be shown if rolled
 
-var readyStateCheckInterval = setInterval(function() {
-    if (document.readyState === "complete") {
-        init();
-        clearInterval(readyStateCheckInterval);
-    }
-}, 10);
-
-function init() {
-	play_skate = document.getElementById('skate_toggle').checked;
-	if (document.getElementById('radio_easy').checked == true)
+$(document).ready(function() {
+	play_skate = $('#skate_toggle').checked;
+	if ($('#radio_easy').checked == true)
 		difficulty = 12;
-};
+		
+	$('#settings').on('click', function() {
+		$('#collapse').toggleClass('hidden').toggleClass('show');
+		if ($('#collapse').hasClass('show')) {
+			this.style.height = '150px';
+		} else {
+			this.style.height = '20px';
+		}
+	});
+});
 
 //Ayo, we just made you 12-sided DIE, mufucka!
 var d1 = ["regular", "fakie", "switch", "nollie", "x", "skate\ndice", "regular", "regular", "fakie", "fakie", "x", "skate\ndice"];
@@ -55,7 +56,7 @@ function roll() {
 		var rand = Math.floor(Math.random()*difficulty);
 		o = die[x][rand];
 		
-		console.log(o);
+		//console.log(o);
 		if (o === 'x' || o === 'skate\ndice') {
 			var i = (o === 'x') ? 0 : 1;
 			extra[i]++;
@@ -66,8 +67,8 @@ function roll() {
 	if (output==='')
 		output = 'Pick your own!';
 		
-	document.getElementById('dice_container').innerHTML = '<br />'+output;
-	document.getElementById('extra_container').innerHTML = (play_skate) ? '<br /><span>X: '+extra[0]+'</span><br /><span>Skate Dice: '+extra[1]+'</span>' : '';
+	$('#dice_container').innerHTML = '<br />'+output;
+	$('#extra_container').innerHTML = (play_skate) ? '<br /><span>X: '+extra[0]+'</span><br /><span>Skate Dice: '+extra[1]+'</span>' : '';
 }
 
 function changeDifficulty(diff) {
@@ -75,7 +76,7 @@ function changeDifficulty(diff) {
 }
 
 function toggleSkate() {
-	var cb = document.getElementById('skate_toggle');
+	var cb = $('#skate_toggle');
 	if (cb.checked == true) {
 		play_skate = true;
 	} else {

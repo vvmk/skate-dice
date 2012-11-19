@@ -1,0 +1,24 @@
+#settings {
+	padding: 5px;
+	border: 1px solid gray;
+	width: 200px;
+	height: 20px;
+}
+
+#disclose_img {
+	width:20px;
+	height: 20px;
+	float: right;
+}
+
+.hidden {
+	display: none;
+}
+
+.show {
+	display: block;
+}
+
+#collapse {
+	
+}
