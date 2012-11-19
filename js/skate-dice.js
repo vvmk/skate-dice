@@ -19,7 +19,7 @@
 	//make trick output smarter
 		//only fakie, switch, regular -> add 'ollie'
 		//only  frontside/backside -> add '180' or 'ollie'
-	//style extras and trick output
+	//style extras
 
 //settings
 var difficulty = 6; //if easy, dilute dice with easier tricks
