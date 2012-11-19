@@ -13,8 +13,7 @@ This is a simple skate dice app designed for the web. Read below if you want to 
  - make trick output smarter
  - only fakie, switch, regular -> add 'ollie'
 	 - only  frontside/backside -> add '180' or 'ollie'
- - move down settings into sexy 'prefs' pane; show/hide
- - make everything prettier (dice graphics and such)
+ - style trick and 'play skate' output
 
 #### Why?
 Neither I nor this project are affiliated with whichever entity owns the official 'SK8 Dice' brand of products in any way. This was written for fun. 
