@@ -19,26 +19,11 @@
 	//make trick output smarter
 		//only fakie, switch, regular -> add 'ollie'
 		//only  frontside/backside -> add '180' or 'ollie'
-	//make everything prettier (dice graphics and such)
+	//style extras and trick output
 
 //settings
 var difficulty = 6; //if easy, dilute dice with easier tricks
 var play_skate = false; //if false, 'x' and 'skate dice' will not be shown if rolled
-
-$(document).ready(function() {
-	play_skate = $('#skate_toggle').checked;
-	if ($('#radio_easy').checked == true)
-		difficulty = 12;
-		
-	$('#settings').on('click', function() {
-		$('#collapse').toggleClass('hidden').toggleClass('show');
-		if ($('#collapse').hasClass('show')) {
-			this.style.height = '150px';
-		} else {
-			this.style.height = '20px';
-		}
-	});
-});
 
 //Ayo, we just made you 12-sided DIE, mufucka!
 var d1 = ["regular", "fakie", "switch", "nollie", "x", "skate\ndice", "regular", "regular", "fakie", "fakie", "x", "skate\ndice"];
@@ -49,6 +34,7 @@ var d2 = ["frontside", "backside", "frontside", "backside", "x", "skate\ndice", 
 var die = [d1, d2, d3, d4];
 
 function roll() {
+	console
 	var output = '';
 	var extra = [0, 0]; //[0] = 'x', [1] = 'skate\ndice'
 	for (var x=0; x<die.length;x++) {
@@ -67,8 +53,9 @@ function roll() {
 	if (output==='')
 		output = 'Pick your own!';
 		
-	$('#dice_container').innerHTML = '<br />'+output;
-	$('#extra_container').innerHTML = (play_skate) ? '<br /><span>X: '+extra[0]+'</span><br /><span>Skate Dice: '+extra[1]+'</span>' : '';
+	$('#dice_container').html('<br />'+output);
+	var str = (play_skate) ? '<br /><span>X: '+extra[0]+'</span><br /><span>Skate Dice: '+extra[1]+'</span>' : '';
+	$('#extra_container').html(str);
 }
 
 function changeDifficulty(diff) {
@@ -76,10 +63,21 @@ function changeDifficulty(diff) {
 }
 
 function toggleSkate() {
-	var cb = $('#skate_toggle');
+	var cb = document.getElementById('skate_toggle');
 	if (cb.checked == true) {
 		play_skate = true;
 	} else {
 		play_skate = false;
 	}
 }
+
+$(function() {
+	play_skate = document.getElementById('skate_toggle').checked;
+	if (document.getElementById('radio_easy').checked == true)
+		difficulty = 12;
+		
+	$('#prefs_top').on('click', function() {
+		$('#collapse').toggleClass('hidden').toggleClass('show');
+	});
+});
+

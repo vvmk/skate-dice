@@ -11,11 +11,12 @@
 		<div id="dice_container">
 		</div>
 		<br />
-		<input type="button" name="roll" value="roll" onclick="roll();" />
+		<input type="image" src="./img/130-dice@2x.png" id="roll_button" onclick="roll();" />
 		<div id="dice_container" class="output"></div>
 		<div id="extra_container" class="output"></div>
 		<br />
-		<div id="settings">Preferences <img id="disclose_img" src="./img/19-gear@2x.png" /><br /><br />
+		<div id="settings">
+			<div id="prefs_top">Preferences <img id="disclose_img" src="./img/19-gear@2x.png" /></div>
 			<div id="collapse" class="hidden">
 				<input type="radio" name="dif" id="radio_normal" CHECKED value="5" onclick="changeDifficulty(6);" />&nbsp;&nbsp;Normal<br />
 				<input type="radio" name="dif" id="radio_easy" value="11" onclick="changeDifficulty(12);" />&nbsp;&nbsp;Easy<br />
